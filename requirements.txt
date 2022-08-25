@@ -1,0 +1,11 @@
+PyYAML
+Flask
+opencv-python
+numpy
+torch2trt
+loguru
+torch
+torchvision
+Pillow
+onnx>=1.9.0
+onnx-simplifier>=0.3.6
