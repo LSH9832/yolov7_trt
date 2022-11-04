@@ -24,7 +24,7 @@ and **yolov7_640x640.onnx** and **yolov7_640x640.yaml** will be generated, copy 
 ```bash
 python3 onnx2trt.py --onnx yolov7_640x640.onnx --yaml yolov7_640x640.yaml --workspace 8 --fp16
 ```
-and it will generate **yolov7_640x640.engine** and **yolov7_640x640.pt** for tensorRT c++ inference and python inference
+and **yolov7_640x640.engine** and **yolov7_640x640.pt** will be generated for tensorRT c++ inference and python inference
 
 ## run
 ### python
