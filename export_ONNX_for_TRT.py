@@ -57,6 +57,9 @@ if __name__ == '__main__':
     device = torch.device('cpu')
     model = attempt_load(opt.weights, map_location=device)
     labels = model.names
+    model.eval()
+    with torch.no_grad():
+        model.fuse()
 
     replace_module(model, nn.SiLU, SiLU)
 
@@ -71,7 +74,7 @@ if __name__ == '__main__':
         print('\nStarting ONNX export with onnx %s...' % onnx.__version__)
         file_name = opt.weights[:-len(opt.weights.split(".")[-1])-1]
         f = file_name + f'_{opt.img_size[0]}x{opt.img_size[1]}.onnx'  # filename
-        model.eval()
+        
         model.model[-1].concat = True
         input_names = ["input_0"]
         output_names = ["output_0"]   # , "output_1", "output_2"]
