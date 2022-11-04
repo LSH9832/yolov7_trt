@@ -19,7 +19,7 @@ pip3 install -r requirements.txt
 ```bash
 python3 export_ONNX_for_TRT.py --weights yolov7.pt --img-size 640 --batch-size 1 --simplify --opset 10
 ```
-and it will generate **yolov7_640x640.onnx** and **yolov7_640x640.yaml**, copy both to the path of this project
+and **yolov7_640x640.onnx** and **yolov7_640x640.yaml** will be generated, copy both of them to the path of this project
 
 ```bash
 python3 onnx2trt.py --onnx yolov7_640x640.onnx --yaml yolov7_640x640.yaml --workspace 8 --fp16
